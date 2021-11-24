@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_015648) do
 
   create_table "albums", force: :cascade do |t|
     t.string "name"
+    t.string "artist"
     t.boolean "released", default: false
     t.datetime "released_at"
     t.float "length"
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_11_24_015648) do
   create_table "tracks", force: :cascade do |t|
     t.string "url"
     t.string "name"
+    t.string "artist"
     t.text "credits"
     t.boolean "available", default: false
     t.float "length"

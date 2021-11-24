@@ -6,11 +6,58 @@
   .search-bar
     = form_tag method: :get, role: "search" do
       %p
-        = text_field_tag :search, params[:search], class: "search-control", placeholder: "Search album"
-        = submit_tag "Search", name: nil, class: "btn-search"
+        = text_field_tag :search, params[:search], class: "search-control", placeholder: "Search for album.."
+  .ext-links
+    = link_to artists_path do
+      See artists
+    = "&nbsp".html_safe
+    = "&nbsp".html_safe
+    = "&nbsp".html_safe
+    = link_to tracks_path do
+      See tracks
 
 .second-div
-  .albums-table
-    
+  .btn-add
+    = link_to "Add an album", new_album_path
+  %br
+  %br
+
+  .table
+    %table
+    .table-header
+      %thead
+        %tr
+          %th Album
+          %th Artist
+          %th Type
+          %th Year
+          %th
+    .table-cells
+      %tbody
+        - @albums.each do |album|
+          %tr
+            %td
+              - if album.cover_art.attached?
+                = image_tag album.cover_art.variant(resize:"50x50")
+              - else
+                = image_tag "album-def.png", size:"50x50"
+            %td
+              = album.name
+            %td
+              = album.artist
+            %td
+              = album.kind
+            %td
+              = album.released_at.year
+            %td
+              = link_to edit_album_path(album.id) do
+                Edit
+              = "&nbsp".html_safe
+              = link_to album_path(album.id), method: :delete, data: { confirm: "Delete album?"} do
+                Delete
+  
+  
+
+
 
 

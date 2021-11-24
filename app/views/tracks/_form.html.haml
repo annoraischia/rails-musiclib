@@ -1,19 +1,27 @@
-.form-in-form-container
+.form-container
   = form_with model: @track do |f|
     .text-field.field-container
       = f.label :name
       = f.text_field :name
-    
-    .text-area-field.field-container
-      = f.label :credits
-      = f.text_area :credits
-    
+    %br
+    .text-field.field-container
+      = f.label :artist
+      = f.text_field :artist
+    %br
+    .text-field.field-container
+      = f.label :length
+      = f.text_field :length
+      %br
+      %br
     .file-field.field-container
-      = f.label :audio_file
-      = f.file_field :audio_file
-    
-    .submit-field.field-container
-      = f.submit
+      =f.label :track
+      =f.file_field :url
+      %br
+      %br
 
+    .submit-field.field-container
+      = f.submit 'Add track'
+    %br
+    %br
   .back-field.field-container
-    =link_to "Back", tracks_path
+    = link_to 'Back to tracks', tracks_path

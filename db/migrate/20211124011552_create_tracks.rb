@@ -3,6 +3,7 @@ class CreateTracks < ActiveRecord::Migration[6.1]
     create_table :tracks do |t|
       t.string :url
       t.string :name
+      t.string :artist
       t.text :credits
       t.boolean :available, default: false
       t.float :length

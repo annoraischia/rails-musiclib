@@ -4,16 +4,20 @@
       = f.label :name
       = f.text_field :name
     %br
+    .text-field.field-container
+      = f.label :artist
+      = f.text_field :artist
+    %br
     .radio-field.field-container
       = f.label :kind, 'Type of album:'
       .radio-option
-        = f.radio_button :kind, 'lp'
+        = f.radio_button :kind, 'LP'
         = f.label :kind_lp, "LP"
       .radio-option
-        = f.radio_button :kind, 'ep'
+        = f.radio_button :kind, 'EP'
         = f.label :kind_ep, "EP"
       .radio-option
-        = f.radio_button :kind, 'single'
+        = f.radio_button :kind, 'Single'
         = f.label :kind_single, "Single"
       %br
       .date-field.field-container

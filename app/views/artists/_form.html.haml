@@ -1,22 +1,22 @@
-.form-in-form-container
+.form-container
   = form_with model: @artist do |f|
     .text-field.field-container
       = f.label :name
       = f.text_field :name
-
-    .text-area-field.field-container
+    %br
+    .text-field.field-container
       = f.label :bio
       = f.text_area :bio
-
+    %br
     .file-field.field-container
-      = f.label :avatar
-      = f.file_field :avatar
-    
-    .file-field.field-container
-      = f.label :cover_photo
-      = f.file_field :cover_photo
+      =f.label :avatar
+      =f.file_field :avatar
+      %br
+      %br
 
     .submit-field.field-container
-      = f.submit
+      = f.submit 'Add artist'
+    %br
+    %br
   .back-field.field-container
-    = link_to "Back", artists_path
+    = link_to 'Back to artists', artists_path
