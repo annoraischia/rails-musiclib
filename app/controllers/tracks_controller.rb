@@ -28,7 +28,7 @@ class TracksController < ApplicationController
   
     def create
       @track = Track.new(track_params)
-  
+      
       if @track.save
         redirect_to tracks_path
       else
@@ -40,7 +40,7 @@ class TracksController < ApplicationController
     private
   
     def track_params
-      params.require(:track).permit(:name, :audio_file, :artist, :credits)
+      params.require(:track).permit(:name, :length, :audio_file, :artist, :album, :credits)
     end
   
     def set_track

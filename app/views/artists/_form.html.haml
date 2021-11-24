@@ -8,15 +8,21 @@
       = f.label :bio
       = f.text_area :bio
     %br
+
     .file-field.field-container
       =f.label :avatar
       =f.file_field :avatar
       %br
       %br
 
+    .date-field.field-container
+      = f.label :formed_at, 'Formed:'
+      = f.date_field :formed_at
+
     .submit-field.field-container
       = f.submit 'Add artist'
     %br
     %br
+    
   .back-field.field-container
     = link_to 'Back to artists', artists_path

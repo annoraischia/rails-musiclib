@@ -24,14 +24,14 @@
 
   .table
     %table
-    .table-header
       %thead
         %tr
+          %th
           %th Track
           %th Artist
+          %th Album
           %th Length
           %th
-    .table-body
       %tbody
         - @tracks.each do |track|
           %tr
@@ -42,6 +42,8 @@
               = track.name
             %td
               = track.artist
+            %td
+              = track.album
             %td
               = track.length
             %td

@@ -24,25 +24,27 @@
 
   .table
     %table
-    .table-header
       %thead
         %tr
+          %th
           %th Artist
           %th Bio
+          %th Formed
           %th
-    .table-body
       %tbody
         - @artists.each do |artist|
           %tr
             %td
               - if artist.avatar.attached?
-                = image_tag album.avatar.variant(resize:"50x50")
+                = image_tag artist.avatar.variant(resize:"50x50")
               - else
-                = image_tag "artist-def.png", size:"50x50"
+                = image_tag "artist-def.jpg", size:"50x50"
             %td
               = artist.name
             %td
               = artist.bio
+            %td
+              = artist.formed_at.year
             %td
               = link_to edit_artist_path(artist.id) do
                 Edit

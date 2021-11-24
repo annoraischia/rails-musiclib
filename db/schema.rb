@@ -69,9 +69,10 @@ ActiveRecord::Schema.define(version: 2021_11_24_015648) do
     t.string "url"
     t.string "name"
     t.string "artist"
+    t.string "album"
     t.text "credits"
     t.boolean "available", default: false
-    t.float "length"
+    t.string "length"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

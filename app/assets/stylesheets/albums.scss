@@ -84,18 +84,11 @@
     font-family: 'Raleway', sans-serif;
     background: paleturquoise;
     display: flex;
-    flex-direction: column;
     flex-flow: column;
+    justify-content: space-around;
+    align-items:flex-start;
 }
-// .table-header {
-//     display: flex;
-//     justify-content: space-evenly;
-//     align-items: center;
-// }
-.table-body {
-    display: flex;
-    flex-flow: column;
-}
+
 
 
 //Form

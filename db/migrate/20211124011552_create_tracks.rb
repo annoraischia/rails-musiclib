@@ -4,9 +4,10 @@ class CreateTracks < ActiveRecord::Migration[6.1]
       t.string :url
       t.string :name
       t.string :artist
+      t.string :album
       t.text :credits
       t.boolean :available, default: false
-      t.float :length
+      t.string :length
       t.timestamps
     end
   end

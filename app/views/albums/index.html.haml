@@ -24,15 +24,14 @@
 
   .table
     %table
-    .table-header
       %thead
         %tr
+          %th 
           %th Album
           %th Artist
           %th Type
           %th Year
           %th
-    .table-cells
       %tbody
         - @albums.each do |album|
           %tr

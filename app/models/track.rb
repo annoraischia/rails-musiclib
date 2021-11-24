@@ -1,4 +1,4 @@
 class Track < ApplicationRecord
     has_one_attached :audio_file
-    validates :name, presence: true
+    validates :name, :length, :album, presence: true
 end
