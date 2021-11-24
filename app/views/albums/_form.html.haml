@@ -1,0 +1,32 @@
+.form-in-form-container
+  = form_with model: @album do |f|
+    .text-field.field-container
+      = f.label :name
+      = f.text_field :name
+
+    .date-field.field-container
+      = f.label :released_at, 'Release date:'
+      = f.date_field :released_at
+    
+    .radio-field.field-container
+      = f.label :kind, 'Type of album'
+      .radio-option
+        = f.radio_button :kind, 'lp'
+        = f.label :kind_lp, "Long playing"
+      .radio-option
+        = f.radio_button :kind, 'ep'
+        = f.label :kind_ep, "Extended Play"
+      .radio-option
+        = f.radio_button :kind, 'single'
+        = f.label :kind_single, "Single"
+
+    .file-field.field-container
+      =f.label :cover_art
+      =f.file_field :cover_art
+    %br/
+
+    .submit-field.field-container
+      = f.submit
+
+  .back-field.field-container
+    = link_to "Back", albums_path

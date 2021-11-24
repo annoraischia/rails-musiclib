@@ -1,0 +1,34 @@
+-# NAV BAR COMPONENT
+.nav-bar
+  .page-title
+    Music on 
+    .color-change= "&nbsp;Rails".html_safe
+  .nav-links
+    .nav-bar-link.active= link_to "Artists", artists_path
+    .nav-bar-link= link_to "Albums", albums_path
+    .nav-bar-link= link_to "Tracks", tracks_path
+
+.nav-bar-filler
+
+-# NAV BAR COMPONENT END
+.table
+  %h1 All artists
+  .add-button
+    = link_to "Add artist", new_artist_path
+  .table-header.cols-3
+    .header
+      %p Artist
+    .header
+      %p Actions
+  - @artists.each do |artist|
+    .table-row.cols-3
+      .table-cell
+        .list-thumbnail
+          - if artist.avatar.attached?
+            = image_tag artist.avatar.variant(resize:"50x50")
+          - else
+            = image_tag "defaults/artist.png", size:"50x50"
+        %p= artist.name
+      .table-cell
+        %p= link_to "Edit", edit_artist_path(artist.id)
+        %p= link_to "Destroy", artist_path(artist), method: :delete, data: {confirm: "Are you sure?"}
